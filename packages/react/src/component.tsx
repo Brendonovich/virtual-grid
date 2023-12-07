@@ -126,7 +126,7 @@ export const Grid = ({ grid, children, ...props }: GridProps) => {
           />
 
           {virtualRows.map((virtualRow) => (
-            <React.Fragment key={virtualRow.index}>
+            <React.Fragment key={virtualRow.key}>
               {virtualColumns.map((virtualColumn) => {
                 let index = grid.horizontal
                   ? virtualColumn.index * grid.rowCount + virtualRow.index
@@ -138,7 +138,7 @@ export const Grid = ({ grid, children, ...props }: GridProps) => {
 
                 return (
                   <div
-                    key={virtualColumn.index}
+                    key={virtualColumn.key}
                     data-index={index}
                     style={{
                       position: 'absolute',
